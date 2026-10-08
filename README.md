@@ -6,7 +6,7 @@ A NeoBite começou como um protótipo acadêmico e evoluiu para uma aplicação 
 🚀 Demonstração
 🔗 Aplicação Online:
 
-https://SEU-LINK-DA-VERCEL.vercel.app
+https://v0-app-de-hamburgueria-futurista.vercel.app/
 
 📸 Screenshots
 Página Inicial
