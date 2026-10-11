@@ -1,220 +1,230 @@
-🍔 NeoBite Burguer
-Aplicação Full Stack desenvolvida com Next.js, TypeScript e Supabase, simulando uma plataforma moderna de pedidos online com identidade visual cyberpunk.
+<div align="center">
 
-A NeoBite começou como um protótipo acadêmico e evoluiu para uma aplicação completa com autenticação, persistência de dados, painel administrativo e gerenciamento de pedidos.
+# 🍔 NeoBite Burgers
 
-🚀 Demonstração
-🔗 Aplicação Online:
+**Plataforma full stack de pedidos online com identidade visual cyberpunk.**
 
-https://v0-app-de-hamburgueria-futurista.vercel.app/
+![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-📸 Screenshots
-Página Inicial
-./home.png.png
+[🚀 Ver aplicação online](https://v0-app-de-hamburgueria-futurista.vercel.app/)
 
-Cardápio
-./cardapio1.png.png
+</div>
 
-Login
-./login.png.png
+---
 
-Histórico de Pedidos
-./pedidos.png.png
+## 📖 Sobre o projeto
 
+A **NeoBite Burgers** começou como um protótipo acadêmico e evoluiu para uma aplicação full stack completa, com autenticação, persistência de dados, painel administrativo e gerenciamento de pedidos.
 
-✨ Funcionalidades
-Cliente
-✅ Cardápio dinâmico integrado ao Supabase
+O projeto simula uma hamburgueria moderna com cardápio dinâmico, carrinho, checkout e acompanhamento de pedidos, tudo com uma interface futurista em tons de ciano e roxo neon.
 
-✅ Carrinho de compras
+> ⚠️ **Aviso:** os pagamentos são simulados para fins educacionais. Nenhuma cobrança real é realizada.
 
-✅ Checkout completo
+## 📑 Índice
 
-✅ Cadastro de usuários
+- [Demonstração](#-demonstração)
+- [Screenshots](#-screenshots)
+- [Funcionalidades](#-funcionalidades)
+- [Arquitetura](#️-arquitetura)
+- [Tecnologias](#️-tecnologias)
+- [Fluxo do sistema](#-fluxo-do-sistema)
+- [Instalação local](#-instalação-local)
+- [Banco de dados](#️-banco-de-dados)
+- [Criando administradores](#-criando-administradores)
+- [Estrutura do projeto](#-estrutura-do-projeto)
+- [Segurança](#-boas-práticas-de-segurança)
+- [Roadmap](#️-roadmap)
+- [Autor](#-autor)
 
-✅ Login e logout
+## 🚀 Demonstração
 
-✅ Recuperação de senha
+🔗 **Aplicação online:** https://v0-app-de-hamburgueria-futurista.vercel.app/
 
-✅ Histórico de pedidos
+## 📸 Screenshots
 
-✅ Avaliação de pedidos
+<table>
+  <tr>
+    <td align="center">
+      <img src="./home.png.png" width="450" alt="Página inicial da NeoBite Burgers"><br>
+      <b>Página Inicial</b>
+    </td>
+    <td align="center">
+      <img src="./cardapio1.png.png" width="450" alt="Cardápio digital"><br>
+      <b>Cardápio Digital</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./login.png.png" width="450" alt="Tela de login"><br>
+      <b>Login</b>
+    </td>
+    <td align="center">
+      <img src="./pedidos.png.png" width="450" alt="Carrinho de pedidos"><br>
+      <b>Carrinho / Seu Pedido</b>
+    </td>
+  </tr>
+</table>
 
-✅ Controle de sessão
+## ✨ Funcionalidades
 
-✅ Exibição do status dos pedidos
+### 👤 Cliente
 
-Administração
-✅ Dashboard administrativo
+- ✅ Cardápio dinâmico integrado ao Supabase
+- ✅ Carrinho de compras
+- ✅ Checkout completo
+- ✅ Cadastro de usuários
+- ✅ Login e logout
+- ✅ Recuperação de senha
+- ✅ Histórico de pedidos
+- ✅ Avaliação de pedidos
+- ✅ Controle de sessão
+- ✅ Exibição do status dos pedidos
 
-✅ Indicadores de pedidos
+### 🛠️ Administração
 
-✅ Faturamento total
+- ✅ Dashboard administrativo com indicadores de pedidos
+- ✅ Faturamento total
+- ✅ Gestão de produtos (cadastro, edição, exclusão e ativação/desativação)
+- ✅ Gestão de pedidos com alteração de status
+- ✅ Controle de acesso administrativo
 
-✅ Gestão de produtos
+### 🔐 Segurança
 
-✅ Cadastro de produtos
+- ✅ Supabase Auth
+- ✅ Row Level Security (RLS)
+- ✅ Proteção de rotas privadas
+- ✅ Controle de permissões
+- ✅ Associação segura entre usuários e pedidos
+- ✅ Recálculo dos pedidos no servidor
+- ✅ Proteção contra pedidos duplicados
 
-✅ Edição de produtos
+## 🏗️ Arquitetura
 
-✅ Exclusão de produtos
+```text
+┌─────────────────────────────────────────────┐
+│  Frontend: Next.js + React + TypeScript     │
+│            Tailwind CSS + shadcn/ui         │
+└──────────────────────┬──────────────────────┘
+                       │
+┌──────────────────────▼──────────────────────┐
+│  Backend: Supabase                          │
+│    ├─ Auth (Supabase Auth)                  │
+│    └─ Banco de dados (PostgreSQL + RLS)     │
+└──────────────────────┬──────────────────────┘
+                       │
+┌──────────────────────▼──────────────────────┐
+│  Hospedagem: Vercel                         │
+└─────────────────────────────────────────────┘
+```
 
-✅ Ativação/desativação de produtos
+## 🛠️ Tecnologias
 
-✅ Gestão de pedidos
+| Categoria | Tecnologias |
+|---|---|
+| **Frontend** | Next.js 16, React 19, TypeScript, Tailwind CSS 4, shadcn/ui, Radix UI, Lucide React |
+| **Backend** | Supabase |
+| **Banco de dados** | PostgreSQL |
+| **Autenticação** | Supabase Auth |
+| **Segurança** | Row Level Security (RLS) |
+| **Monitoramento** | Vercel Analytics |
+| **Hospedagem** | Vercel |
 
-✅ Alteração de status
+## 🔄 Fluxo do sistema
 
-✅ Controle de acesso administrativo
+### Cliente
 
-Segurança
-✅ Supabase Auth
+```text
+Cadastro → Login → Cardápio → Carrinho → Checkout → Pedido registrado → Avaliação → Histórico
+```
 
-✅ Row Level Security (RLS)
+### Administrador
 
-✅ Proteção de rotas privadas
+```text
+Login → Painel administrativo → Dashboard → Gestão de produtos → Gestão de pedidos → Atualização de status
+```
 
-✅ Controle de permissões
+## 📦 Instalação local
 
-✅ Associação segura entre usuários e pedidos
+### Pré-requisitos
 
-✅ Recalculo dos pedidos no servidor
+- Node.js 20+
+- npm ou pnpm
+- Conta no [Supabase](https://supabase.com)
 
-✅ Proteção contra pedidos duplicados
+### Passo a passo
 
-⚠️ Os pagamentos são simulados para fins educacionais. Nenhuma cobrança real é realizada.
+**1. Clone o projeto**
 
-🏗️ Arquitetura
-Frontend
-│
-├── Next.js
-├── React
-├── TypeScript
-├── Tailwind CSS
-└── shadcn/ui
-
-Backend
-│
-└── Supabase
-
-Banco de Dados
-│
-└── PostgreSQL
-
-Autenticação
-│
-└── Supabase Auth
-
-Hospedagem
-│
-└── Vercel
-🛠️ Tecnologias Utilizadas
-Frontend
-Next.js 16
-React 19
-TypeScript
-Tailwind CSS 4
-shadcn/ui
-Radix UI
-Lucide React
-Backend
-Supabase
-PostgreSQL
-Autenticação
-Supabase Auth
-Segurança
-Row Level Security (RLS)
-Monitoramento
-Vercel Analytics
-🔄 Fluxo do Sistema
-Cliente
-Cadastro
-↓
-Login
-↓
-Cardápio
-↓
-Carrinho
-↓
-Checkout
-↓
-Pedido Registrado
-↓
-Avaliação
-↓
-Histórico de Pedidos
-Administrador
-Login
-↓
-Painel Administrativo
-↓
-Dashboard
-↓
-Gestão de Produtos
-↓
-Gestão de Pedidos
-↓
-Atualização de Status
-📦 Instalação Local
-Pré-requisitos
-Node.js 20+
-npm ou pnpm
-Conta no Supabase
-Clonar o projeto
+```bash
 git clone https://github.com/DenilsonFerreiraDev/NeoBiteBurguer.git
-
 cd NeoBiteBurguer
-Instalar dependências
+```
+
+**2. Instale as dependências**
+
+```bash
 npm install
-Configurar variáveis de ambiente
-Crie um arquivo:
+```
 
-.env.local
-Utilizando como base:
+**3. Configure as variáveis de ambiente**
 
-.env.example
-Exemplo:
+Crie o arquivo `.env.local` com base no `.env.example`:
 
+```env
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
-Executar aplicação
+```
+
+**4. Execute a aplicação**
+
+```bash
 npm run dev
-Acesse:
+```
 
-http://localhost:3000
-✅ Build de Produção
+Acesse: http://localhost:3000
+
+### ✅ Build de produção
+
+```bash
 npm run lint
-
 npm run build
-🗄️ Banco de Dados
-Principais tabelas:
+```
 
-products
-Responsável pelo catálogo de produtos.
+## 🗄️ Banco de dados
 
-orders
-Responsável pelo registro dos pedidos.
+| Tabela | Responsabilidade |
+|---|---|
+| `products` | Catálogo de produtos |
+| `orders` | Registro dos pedidos |
+| `reviews` | Avaliações dos pedidos |
+| `admin_users` | Controle de administradores |
 
-reviews
-Responsável pelas avaliações.
+Mais detalhes em [`docs/DATABASE.md`](./docs/DATABASE.md).
 
-admin_users
-Responsável pelo controle de administradores.
+## 👨‍💼 Criando administradores
 
-👨‍💼 Criando Administradores
-Após criar e confirmar uma conta:
+Depois de criar e confirmar uma conta, execute no **SQL Editor** do Supabase:
 
+```sql
 insert into public.admin_users (user_id)
 select id
 from auth.users
 where email = 'admin@exemplo.com'
 on conflict (user_id) do nothing;
-Após realizar novo login:
+```
 
-/conta
-↓
-Admin
-📁 Estrutura do Projeto
+Em seguida, faça login novamente e acesse `/conta` → **Admin**.
+
+Mais detalhes em [`docs/admin.md`](./docs/admin.md).
+
+## 📁 Estrutura do projeto
+
+```text
 app/
 ├── admin/
 ├── auth/
@@ -222,7 +232,6 @@ app/
 │   ├── sign-up/
 │   ├── forgot-password/
 │   └── update-password/
-│
 ├── conta/
 ├── layout.tsx
 └── page.tsx
@@ -234,42 +243,55 @@ components/
 docs/
 ├── DATABASE.md
 └── admin.md
-🔐 Boas Práticas de Segurança
-Nunca enviar arquivos .env
-Nunca expor Service Role Keys
-Nunca expor senhas do banco
-Manter RLS habilitado
-Utilizar apenas a chave pública no frontend
-Ativar Secret Scanning no GitHub
-🗺️ Roadmap Futuro
-Integração com pagamentos reais
-Cupons persistidos
-Programa de fidelidade
-Dashboard avançado
-Notificações em tempo real
-Rastreio de pedidos
-Recomendações com IA
-Aplicativo mobile
-🎯 Objetivos do Projeto
+```
+
+## 🔐 Boas práticas de segurança
+
+- Nunca enviar arquivos `.env` para o repositório
+- Nunca expor a **Service Role Key**
+- Nunca expor senhas do banco
+- Manter o **RLS** sempre habilitado
+- Usar apenas a chave pública (anon) no frontend
+- Ativar o **Secret Scanning** no GitHub
+
+## 🗺️ Roadmap
+
+- [ ] Integração com pagamentos reais
+- [ ] Cupons persistidos
+- [ ] Programa de fidelidade
+- [ ] Dashboard avançado
+- [ ] Notificações em tempo real
+- [ ] Rastreio de pedidos
+- [ ] Recomendações com IA
+- [ ] Aplicativo mobile
+
+## 🎯 Objetivos do projeto
+
 Este projeto foi desenvolvido com foco em:
 
-Desenvolvimento Full Stack
-Next.js
-TypeScript
-Banco de Dados PostgreSQL
-Autenticação
-Segurança
-Controle de Acesso
-Arquitetura Web
-Experiência do Usuário (UX)
-👨‍💻 Autor
-Antonio Denilson Ferreira Araujo
+- Desenvolvimento Full Stack
+- Next.js e TypeScript
+- Banco de dados PostgreSQL
+- Autenticação e controle de acesso
+- Segurança
+- Arquitetura web
+- Experiência do usuário (UX)
 
-GitHub: https://github.com/DenilsonFerreiraDev
+## 👨‍💻 Autor
 
-LinkedIn: https://www.linkedin.com/in/denilson-ferreira-dev/?isSelfProfile=true
+**Antonio Denilson Ferreira Araujo**
 
-📄 Licença
+[![GitHub](https://img.shields.io/badge/GitHub-DenilsonFerreiraDev-181717?style=for-the-badge&logo=github)](https://github.com/DenilsonFerreiraDev)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-denilson--ferreira--dev-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/denilson-ferreira-dev/)
+
+## 📄 Licença
+
 Projeto desenvolvido para fins educacionais e demonstração de competências em desenvolvimento Full Stack.
 
+---
+
+<div align="center">
+
 ⭐ Se este projeto foi interessante para você, considere deixar uma estrela no repositório.
+
+</div>
