@@ -10,16 +10,17 @@ https://v0-app-de-hamburgueria-futurista.vercel.app/
 
 📸 Screenshots
 Página Inicial
-Adicione aqui uma captura da landing page.
+./home.png.png
 
 Cardápio
-Adicione aqui uma captura do cardápio.
+./cardapio1.png.png
 
-Área do Usuário
-Adicione aqui uma captura da página /conta.
+Login
+./login.png.png
 
-Painel Administrativo
-Adicione aqui uma captura da página /admin.
+Histórico de Pedidos
+./pedidos.png.png
+
 
 ✨ Funcionalidades
 Cliente
