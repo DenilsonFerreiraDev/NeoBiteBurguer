@@ -267,7 +267,7 @@ Antonio Denilson Ferreira Araujo
 
 GitHub: https://github.com/DenilsonFerreiraDev
 
-LinkedIn: ADICIONE_SEU_LINK
+LinkedIn: https://www.linkedin.com/in/denilson-ferreira-dev/?isSelfProfile=true
 
 📄 Licença
 Projeto desenvolvido para fins educacionais e demonstração de competências em desenvolvimento Full Stack.
